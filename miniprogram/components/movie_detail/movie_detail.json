@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "re-button" : "../re-button/re-button"
+  }
+}

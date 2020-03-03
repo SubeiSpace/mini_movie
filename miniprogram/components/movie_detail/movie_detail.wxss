@@ -1,0 +1,95 @@
+/* components/movie_detail/movie_detail.wxss */
+
+
+.movie_body{
+  display: flex;
+  flex-direction: column;
+  margin: 50rpx 50rpx;
+  align-items: center;
+  height: 100%
+}
+
+.movie_body .movie_content{
+  display: flex;
+  border: 1rpx solid gray;
+  border-radius: 3px;
+  background: white;
+  margin-top: -250rpx;
+  position: relative;
+  height: 100%;
+  bottom: 0;
+}
+
+.movie_content .movie_desc{
+  margin-top: 300rpx;
+  margin-bottom: 50rpx;
+  padding: 0 50rpx;
+  width: 550rpx;
+}
+
+.movie_desc .movie_title{
+  font-size: 36rpx;
+  color: black;
+  font-weight: 900;
+  text-align: center
+}
+
+.movie_desc .movie_detail{
+  font-size: 32rpx;
+  color:black;
+  margin-top: 20rpx;
+  line-height: 52rpx;
+}
+
+.movie_body .movie_image{
+  width: 300rpx;
+  height: 400rpx;
+  position: relative;
+  z-index: 9999
+}
+
+ .movie_button{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 100rpx;
+  background: white;
+}
+
+.movie_button re-button{
+  align-items: center;
+  justify-content: center;
+}
+
+.review{
+  display: flex;
+  margin-top: 20rpx;
+  justify-content: center;
+  align-items: center
+}
+
+.review .review-input{
+  width: 100%;
+  padding: 10rpx;
+  position: relative;
+  border: 1rpx solid gray;
+  border-radius: 5rpx;
+  box-sizing: border-box
+}
+
+.review .record_view{
+  width: 200rpx;
+  display: flex;
+  margin-top: 150rpx;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid gray;
+  border-radius: 3rpx;
+  padding: 20rpx;
+}
+
+.record_view image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx
+}

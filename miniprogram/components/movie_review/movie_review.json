@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "audio-button": "../audio-button/audio-button",
+    "re-button": "../re-button/re-button"
+  }
+}

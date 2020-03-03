@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/start/start",
+    "pages/mine/mine",
+    "pages/hot/hot",
+    "pages/detail/detail",
+    "pages/review/review",
+    "pages/preview/preview",
+    "pages/check-review/check-review",
+    "pages/recommend/recommend"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

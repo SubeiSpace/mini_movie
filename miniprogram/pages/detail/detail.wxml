@@ -1,0 +1,4 @@
+<!--pages/detail/detail.wxml-->
+<block wx:if="{{detail}}">
+    <movie_detail movie="{{detail}}" button="{{button}}" reviewed="{{reviewed}}" bindFirstHandle="firstHandle" bindSecondHandle="secondHandle" bindThirdHandle="thirdHandle"></movie_detail>
+</block>

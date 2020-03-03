@@ -1,0 +1,4 @@
+<!--pages/hot/hot.wxml-->
+<block wx:for="{{hotMovies}}" wx:key="_id">
+  <movie_item isReview="{{true}}" movie="{{item}}" id="{{item._id}}" bindOnItemClick="onItemClick"> </movie_item>
+</block>

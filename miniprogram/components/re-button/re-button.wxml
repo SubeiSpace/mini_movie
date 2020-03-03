@@ -1,0 +1,6 @@
+<!--components/button/button.wxml-->
+
+  <view class="button" id="{{target}}" bindtap="navToTarget">
+    <image class="button-image" src="{{image == '' ? '' : image}}"> </image>
+    <view class="button-title">{{title}}</view>
+ </view>

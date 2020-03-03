@@ -1,0 +1,24 @@
+<!--pages/check-review/check-review.wxml-->
+<!-- 影视列表-->
+
+<block wx:if="{{review.length}}">
+  <view class="review" wx:for="{{review}}" wx:key="_id" bindtap="toRecommend" id="{{item.id}}" data-openId="{{item.openId}}">
+    <view class="author">
+      <image src="{{item.user.avatarUrl}}"></image>
+      <view>{{item.user.nickName}}</view>
+    </view>
+
+    <view class="review_content">
+
+      <view wx:if="{{item.review}}">{{item.review}}</view>
+      <audio-button wx:if="{{item.soudUrl}}" recordingTime="{{item.recordingTime}}" id="{{item.soudUrl}}" bindAudioPlay="audioPlay"> </audio-button>
+    </view>
+  </view>
+</block>
+
+<block wx:else>
+  <view class="no_review">暂无影评</view>
+</block>
+
+<view class="back" bindtap="backToStart">回到首页</view>
+

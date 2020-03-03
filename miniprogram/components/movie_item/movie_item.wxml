@@ -1,0 +1,26 @@
+<!--components/movie_item/movie_item.wxml-->
+  <view class="movie_item" data-id="{{id}}" data-openId="{{openId}}" bindtap="onItemClick">
+    <image class="movie_image" src="{{movie.image == '' ? '/images/default.png' : movie.image}}"></image>
+    <view class="movie_content">
+      <view class="movie_title">{{movie.name}}</view>
+      <!--热门电影类型-->
+      <block wx:if="{{isReview}}">
+        <view class="movie_type">类型：{{movie.type}} </view>
+      </block>
+
+      <!-- 收藏影评-->
+      <block wx:else>
+        <view class="review">
+          <view class="review_desc">
+            <view wx:if="{{movie.review}}">{{movie.review}}</view>
+            <audio-button wx:if="{{movie.soudUrl}}" soundUrl="{{movie.soudUrl}}" recordingTime="{{recordingTime}}" bindAudioPlay="audioPlay"></audio-button>
+          </view>
+
+          <view class="review_author">
+            <image src="{{movie.user.avatarUrl}}"></image>
+            <view>{{movie.user.nickName}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>

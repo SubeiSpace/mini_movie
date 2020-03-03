@@ -1,0 +1,43 @@
+<!--components/movie_detail/movie_detail.wxml-->
+
+<view class="movie_body">
+  <image  class="movie_image" src="{{movie.image == '' || movie.image == null ? '/images/default.png' : movie.image}}"></image>
+
+  <view class="movie_content" >
+    <view  class="movie_desc" style="height:{{height}}rpx">
+        <view class="movie_title">{{movie.name}}</view>
+        <block wx:if="{{!isReview}}">
+          <!-- 电影详情显示内容-->
+          <view class="movie_detail">{{movie.detail}}</view>
+          <view class="movie_button">
+            <re-button title="{{button[0].title}}" image="{{button[0].image}}" target="{{movie._id}}" bindToTarget="firstHandle"></re-button>
+
+            <block wx:if="{{!reviewed}}">
+              <re-button title="{{button[1].title}}" image="{{button[1].image}}" target="{{movie._id}}" bindToTarget="secondHandle"></re-button>
+            </block>
+            <block wx:else>
+              <re-button title="{{button[2].title}}" image="{{button[2].image}}" target="{{movie._id}}" bindToTarget="thirdHandle"></re-button>
+            </block>
+          </view>
+        </block>
+
+        <block wx:else>
+          <!-- 编辑影评-->
+          <view class="review">
+              <block wx:if='{{!isAudio}}'>
+                <textarea class="review-input" placeholder-class="review-placeholder" placeholder="输入你的影评内容..." maxlength="250" bindinput="inputReview"></textarea>
+              </block>
+
+              <block wx:else>
+                <view class="record_view">
+                  <image src="/images/record.png"></image>
+                  <view id="{{movie._id}}" bindtouchstart="recordStart" bindtouchend="recordEnd" >录音</view>
+                </view>
+              </block>
+          </view>
+
+        </block>
+    </view>
+  </view>
+
+</view>

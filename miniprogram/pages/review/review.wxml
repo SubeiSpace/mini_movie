@@ -1,0 +1,7 @@
+<!--pages/review/review.wxml-->
+<block wx:if="{{movie}}">
+    <movie_detail movie="{{movie}}" isReview="{{true}}" isAudio="{{isAudio}}" height="{{540}}" bindRecordStart="recordStart" bindRecordEnd="recordEnd" bindInputReview="inputReview"></movie_detail>
+</block>
+
+<view  class="completed" bindtap="completed">完成</view>
+
