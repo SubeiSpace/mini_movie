@@ -1,0 +1,105 @@
+.film-details-wrapper {
+  margin-top: 70rpx;
+  margin-bottom: 0rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  background-color: white;
+  height: 960rpx;
+}
+.details-info-wrapper {
+  height: 880rpx;
+}
+.details-image-view {
+  margin-top: -60rpx;
+  display:flex;
+  justify-content: center;
+}
+.details-image {
+  height: 330rpx;
+  width: 230rpx;
+}
+.details-name {
+  display:flex;
+  justify-content:center;
+  font-weight:600;
+  margin-top: 15rpx;
+  letter-spacing:8rpx;
+  font-size: 38rpx;
+  line-height: 53.2rpx;
+}
+.pre-review-wrapper{
+  margin-top: 95rpx;
+}
+
+.pre-review-button {
+  background-color: green;
+}
+
+.topicRecording {
+  float: left;
+  width: 40%;
+  height: 100%;
+  position: relative;
+}
+ 
+ 
+.progress_box {
+  width: 130rpx;
+  height: 130rpx;
+  margin-left: -65rpx;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(200, 36, 221);
+  border-radius: 50%;
+}
+ 
+.progress_bgs {
+  width: 114rpx;
+  height: 114rpx;
+  background: #fff;
+  border-radius: 50%;
+  margin: 9rpx;
+}
+ 
+.progress_bg {
+  width: 106rpx;
+  height: 106rpx;
+  margin: 5rpx;
+  position: absolute;
+  background: #de4d2c;
+  border-radius: 50%;
+}
+
+.progress_img {
+  width: 82rpx;
+  height: 82rpx;
+  border-radius: 50%;
+  margin: 12rpx;
+}
+.play-wrapper {
+  display: flex;
+  width: 360rpx; 
+  margin: 30rpx; 
+  margin-left: 36rpx;
+  background-color:#f5f5f5;
+  height: 60rpx;
+}
+.ico{ 
+  width: 26rpx; 
+  height: 30rpx; 
+  float: left;
+  margin-top: 15rpx;
+  margin-left: 27rpx;
+}
+.time {
+  padding: 10rpx;
+}
+.record-voice-button, .shut-voice-button{
+  font-size: 34rpx;
+  margin-top: 250rpx;
+
+}

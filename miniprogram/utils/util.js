@@ -1,93 +1,68 @@
-const cloud = require('./cloud.js')
-const cloudUrl = "https://6d69-mini-movie-gi442-1301236199.tcb.qcloud.la/sounds"
+module.exports = {
 
-/**
- * 用户模块
- */
-const user = () =>{
-  return {
-    //获取本地用户存储信息
-    getCurrentUser :() => wx.getStorageSync('user'),
-    //获取微信帐号信息
-    signIn: () => new Promise((reslove, reject) => {
+  getUserInfo() {
+    return new Promise((resolve, reject) => {
+      this.isAuthenticated().then(() => {
+        wx.getUserInfo({
+          success(res) {
+            resolve(res.userInfo)
+          }
+        })
+      }).catch(() => {
+        reject()
+      })
+    })
+  },
+
+  isAuthenticated() {
+    return new Promise((resolve, reject) => {
       wx.getSetting({
-        success: res => {
-          if (res.authSetting['scope.userInfo'] == false) {
-            reject()
+        success(res) {
+          if (res.authSetting['scope.userInfo'] === true) {
+            resolve()
           } else {
-            wx.getUserInfo({
-              success: res => {
-                const {userInfo} = res;
-            
-                reslove({user: userInfo })
-              }
-            })
+            reject()
           }
         }
       })
-    }),
-
-    cloudUser: () => new Promise((reslove, reject) => {
-      user().signIn().then(({ user }) => {
-        cloud.db().queryUser().then(({ result }) => { //查询云端是否已有此用户
-          if (result.length == 0) { //没有此用户，添加到云端
-            cloud.db().login(user).then(({ result }) => {
-              const {openId} = result
-              reslove({user, openId})
-            })
-          }else{
-            const {openId} = result[0]
-            reslove({user, openId})
-          }
-        })
-      })
-    }),
-
-    fetchUser: () => new Promise((reslove, reject) => {
-      user().cloudUser().then(({user, openId}) => {
-        console.log(user)
-        wx.setStorage({
-          key: 'user',
-          data: user
-        })
-
-        reslove({user})
-      })
     })
-  }
-}
+  },
 
-  
-const formatDate = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
+  formatTime(time, reg) {
+    const date = typeof time === 'string' || typeof time === 'number' ? new Date(time) : time;
+    const map = {};
+    map.yyyy = date.getFullYear();
+    map.yy = ('' + map.yyyy).substr(2);
+    map.M = date.getMonth() + 1
+    map.MM = (map.M < 10 ? '0' : '') + map.M;
+    map.d = date.getDate();
+    map.dd = (map.d < 10 ? '0' : '') + map.d;
+    map.H = date.getHours();
+    map.HH = (map.H < 10 ? '0' : '') + map.H;
+    map.m = date.getMinutes();
+    map.mm = (map.m < 10 ? '0' : '') + map.m;
+    map.s = date.getSeconds();
+    map.ss = (map.s < 10 ? '0' : '') + map.s;
 
-  return [year, month, day, hour, minute, second].map(formatNumber).join("")
-}
+    return reg.replace(/\byyyy|yy|MM|M|dd|d|HH|H|mm|m|ss|s\b/g, $1 => {
+      return map[$1];
+    });
+  },
 
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
-}
+  getId() {
+    return Math.floor((1 + Math.random()) * 0x100000000).toString(16).slice(1)
+  },
+  backToHome(){
+    wx.redirectTo({
+      url: '../index/index',
+    })
+  },
+  getStampFromDate() {
+    let timestamp = Date.parse(new Date());
+    timestamp = timestamp / 1000;
+    console.log("当前时间戳为：" + timestamp);
+    return timestamp
+  },
 
 
-const midstr = (str) => {
-  var strnum = str.lastIndexOf('/')
-  var ministr = str.substr(strnum)
-  return cloudUrl + ministr
-}
-
-
-
-
-
-module.exports = {
-  cloudUrl,
-  user,
-  formatDate,
-  midstr
 }

@@ -1,0 +1,37 @@
+/* miniprogram/pages/film-list/file-list.wxss */
+.film-list-wrapper {
+  display: flex;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.film-image {
+  width: 207rpx;
+  height: 306rpx;
+
+}
+.image-wrapper {
+  width: 30%;
+
+
+}
+.film-info-wrapper {
+  width: 70%;
+  background-color: white;
+  text-align: left;
+  height: 306rpx;
+  
+}
+
+.film-name-view {
+  margin-top: 70rpx;
+  margin-left: 35rpx;
+  font-weight:600;
+  line-height: 58.8rpx;
+}
+.film-type-view {
+  margin-top: 60rpx;
+  margin-left: 35rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
+}

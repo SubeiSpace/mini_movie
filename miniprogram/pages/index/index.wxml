@@ -1,0 +1,24 @@
+<!-- 小程序默认首页-->
+<view class="film-summary-wrapper">
+  <view class="film-poster-wrapper" bindtap="redirectToFilmDetails">
+    <image class="film-poster" src="{{filmDetails.imageurl}}" mode="widthFix"></image>
+  </view>
+  <text class="film-name">{{filmDetails.filmname}}</text>
+</view>
+
+<view class="film-review-wrapper" bindtap="redirectToReviewDetails">
+    <view class="user-info">
+      <image class="user-head" src="{{review.avatar}}"></image>
+    </view>
+    <text wx:if="{{noReview}}" class="film-review-notice">暂无影评</text>
+    <text wx:else="{{noReview}}" class="film-review-notice">{{review.username}}评价了一部电影</text>
+</view>
+
+<view class="home-btn-wrapper">
+    <view class="film-list-view" bindtap="redirectToFilmList">
+      <button type="default" style="width:32vw;background: #red;">热门推荐</button>
+    </view>
+    <view class="me-view" bindtap="redirectToMe">
+      <button type="default" style="width:32vw;background: #red;">个人中心</button>
+    </view>
+</view>

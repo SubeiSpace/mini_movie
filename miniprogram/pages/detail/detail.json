@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-     "movie_detail": "../../components/movie_detail/movie_detail"
-  },
-  "navigationBarTitleText": "电影详情"
-}

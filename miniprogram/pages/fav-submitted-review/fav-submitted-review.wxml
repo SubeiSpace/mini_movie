@@ -1,0 +1,36 @@
+<view class="my-review-list-wrapper">
+  <scroll-view scroll-y scroll-with-animation enable-back-to-top style="height: 100%">
+    <view class="review-list-wrapper" wx:for="{{reviewList}}" bindtap="redirectToReviewDetails" data-id="{{item._id}}">
+        <view class="image-wrapper">
+          <image class="film-image" src="{{item.imageurl}}"></image>
+        </view>
+      
+        <view class="film-info-wrapper">
+          <view class="film-name-view">
+            <text class="film-name">{{item.filmname}}</text>
+          </view>
+          <view class="film-review-view" wx:if="{{item.type == textType}}">
+            <text class="film-review-content">{{item.content}}</text>
+          </view>
+          <view class="film-review-view-voice" wx:if="{{item.type == voiceType}}">
+            <view bindtap='recordingAndPlaying' class="play-wrapper" data-soundid="{{item.content}}" style="display:{{showRecording}}">
+                <image class='ico' src='{{imagesUrl}}' />
+                <label class='time'>{{item.time}}</label>
+           </view>
+          </view>
+          <view class="user-info-view">
+            <view class="user-head">
+              <image class="user-head-image" src="{{item.avatar}}"></image>
+            </view>
+            <view>
+              <text class="user-name">{{item.username}}</text>
+            </view>
+          </view>
+        </view>
+    </view>
+  </scroll-view>
+
+  <!-- <view class="back-btn-view">
+    <button class="back-button" style="width:100%">返回个人中心</button>
+  </view> -->
+</view>

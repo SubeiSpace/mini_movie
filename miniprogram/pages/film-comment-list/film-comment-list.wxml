@@ -1,0 +1,32 @@
+<scroll-view scroll-y class="review-list-wrapper" wx:for="{{reviewList}}" bindtap="redirectToReviewDetails" data-id="{{item._id}}" data-userid="{{item.user}}">
+  <view class="user-info">
+    <view class="user-head">
+      <image class="user-head-image" src="{{item.avatar}}"></image>
+    </view>
+    <view>
+      <text class="user-name">{{item.username}}</text>
+    </view>
+  </view>
+  
+  <view class="review-info">
+        <!-- 文字类型的评论 -->
+        <view wx:if="{{item.type == textType}}">
+            <text>{{item.content}}</text>
+        </view>
+        <view wx:if="{{item.type == voiceType}}">
+        <!-- 语音类型的评论 -->
+            <view class='output-audio'>
+              <!-- 默认状态 未播放 -->
+              <view class='audio'>
+                <image class='ico' src="{{imagesUrl}}"/>
+                <label class='time'>{{item.time}}s</label>
+              </view>
+            </view>
+        </view>
+  </view>
+</scroll-view>
+
+<view class="seperate-view"></view>
+<view class="back-btn-view" bindtap="backToHome">
+        <button class="back-button" style="width:100%">回到首页</button>
+</view>

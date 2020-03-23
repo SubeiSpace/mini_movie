@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "login": "../../components/login/login",
-    "movie_item": "../../components/movie_item/movie_item"
-  },
-  "navigationBarTitleText": "我的",
-  "enablePullDownRefresh": true  
-}

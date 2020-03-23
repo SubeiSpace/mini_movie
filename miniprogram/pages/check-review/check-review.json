@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "audio-button": "../../components/audio-button/audio-button"
-  },
-  "navigationBarTitleText": "影评列表",
-  "enablePullDownRefresh": true  
-}

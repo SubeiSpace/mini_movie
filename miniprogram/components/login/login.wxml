@@ -1,6 +1,9 @@
-<!--components/login/login.wxml-->
-
-  <view class="userinfo" style="margin-bottom:50rpx;">
-		<image class="userinfo-avatar" src="/images/nologin.png" background-size="cover"></image>
-		<button class="weui-btn mini-btn" plain="true" size="mini" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">点击登录账户</button>
-	</view>
+<!-- 登陆页面 -->
+<view class="login-card">
+  <view class="login-head"></view>
+  <view class="login-info">
+    <view class="login-text">未登陆</view>
+    <view class="login-tips">请登录进行更多操作</view>
+  </view>
+</view>
+<button class="login-btn" open-type="getUserInfo" bindgetuserinfo="onTapLogin">登陆</button>

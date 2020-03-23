@@ -1,0 +1,54 @@
+<!--miniprogram/pages/file-details/film-details.wxml-->
+<view class="film-details-wrapper">
+  <view class="details-info-wrapper">
+    <view class="details-image-view">
+      <image class="details-image" src="{{filmDetails.imageurl}}"></image>
+    </view>
+    <view class="details-name">{{filmDetails.filmname}}</view>
+    
+    <view class="content-input-wrapper">
+      <form>
+        <view class="text-area" wx:if="{{reviewtype == textType}}">
+          <textarea style="padding:40rpx;" placeholder="请输入你的影评内容..." value='{{content}}' name="textarea" bindinput="bindTextAreaInput">
+          </textarea>
+        </view>
+        
+
+          <!-- start -->
+            <!-- <view class='progress_box' bindtap='openRecording' style="display:{{openRecordingdis}}">
+             <view class="progress_bgs">
+               <view class="progress_bg">
+                  
+               </view>
+             </view>
+           </view>
+           <view class='progress_box' bindtap='shutRecording' style="display:{{shutRecordingdis}}">
+             <view class="progress_bgs">
+               <view class="progress_bg">
+                  
+               </view>
+             </view>
+           </view> -->
+           <view wx:if="{{reviewtype == voiceType}}" bindtap='recordingAndPlaying' class="play-wrapper" data-soundid="{{soundUrl}}" style="display:{{showRecording}}">
+                <image class='ico' src='{{imagesUrl}}' />
+                <label class='time'>{{recordingTimeqwe}}s</label>
+           </view>
+
+          <view class="voice-area" wx:if="{{reviewtype == voiceType}}">
+            <button class="record-voice-button" style="width:32vw;border: solid 1px grey;" bindtap='openRecording' style="display:{{openRecordingdis}}">
+              开始录音
+            </button>
+            <button class="shut-voice-button" style="width:32vw;border: solid 1px grey;" bindtap='shutRecording' style="display:{{shutRecordingdis}}">停止录音</button>
+           
+          <!-- finish -->
+        </view>
+        
+      </form>
+    </view>
+  </view>
+</view>
+<view class="pre-review-wrapper">
+    <view class="pre-review-view" bindtap="bindFormSubmit">
+      <button type="primary" class="pre-review-button" style="width:100%">完成</button>
+    </view>
+</view>

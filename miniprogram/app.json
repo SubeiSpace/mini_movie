@@ -1,20 +1,27 @@
 {
   "pages": [
-    "pages/start/start",
-    "pages/mine/mine",
-    "pages/hot/hot",
-    "pages/detail/detail",
-    "pages/review/review",
-    "pages/preview/preview",
-    "pages/check-review/check-review",
-    "pages/recommend/recommend"
+    "pages/index/index",
+    "pages/person-center/person-center",
+    "pages/film-list/film-list",
+    "pages/film-details/film-details",
+    "pages/film-comment-list/film-comment-list",
+    "pages/film-comment-details/film-comment-details",
+    "pages/film-comment-edit/film-comment-edit",
+    "pages/film-comment-preview/film-comment-preview",
+    "pages/fav-submitted-review/fav-submitted-review",
+    "components/login/login"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "老王带你看电影",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "style": "v2",
+  "cloud": true,
+  "requiredBackgroundModes": [
+    "audio"
+  ]
 }

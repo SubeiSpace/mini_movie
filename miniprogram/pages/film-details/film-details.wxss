@@ -1,0 +1,56 @@
+/* miniprogram/pages/file-details/film-details.wxss */
+.film-details-wrapper {
+  margin-top: 70rpx;
+  margin-bottom: 0rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  background-color: white;
+  height: 960rpx;
+}
+.details-info-wrapper {
+  height: 880rpx;
+}
+
+.review-btn-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around
+
+}
+.details-image {
+  height: 330rpx;
+  width: 230rpx;
+}
+.details-image-view {
+  margin-top: -60rpx;
+  display:flex;
+  justify-content: center;
+}
+.details-name {
+  display:flex;
+  justify-content:center;
+  font-weight:600;
+  margin-top: 15rpx;
+  letter-spacing:8rpx;
+  font-size: 38rpx;
+  line-height: 53.2rpx;
+}
+.details-description {
+  margin:20rpx 50rpx 20rpx 50rpx;
+  font-family: "Times New Roman";
+  color: grey;
+  font-size: 28rpx;
+  font-weight: 100;
+}
+
+.check-review {
+  width: 50%;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.add-review {
+  width: 50%;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+

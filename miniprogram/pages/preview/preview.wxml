@@ -1,5 +1,0 @@
-<!--pages/preview/preview.wxml-->
-
-<block wx:if="{{movie}}" >
-  <movie-review  movie_image="{{image}}" movie_id="{{id}}" movie_name="{{name}}" user="{{user}}" button="{{button}}" soudUrl="{{soudUrl}}" review="{{input}}" isShow="{{isShow}}" recordingTime="{{recordingTime}}" bindFirstHandle="reEditorHandle" bindSecondHandle="releaseHandle" bindAudioPlay="audioPlay"></movie-review>
-</block>

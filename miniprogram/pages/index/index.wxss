@@ -1,0 +1,49 @@
+/* miniprogram/pages/home/home.wxss */
+.film-poster {
+  margin-left:52rpx;
+}
+.film-name {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:600;
+  margin-top: 15rpx;
+  letter-spacing:8rpx;
+  font-size: 42rpx;
+  line-height: 58.8rpx;
+}
+.film-review-wrapper {
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  margin-top: 15rpx;
+
+}
+
+.film-review-notice {
+  margin-left: 20rpx;
+}
+.user-head {
+  flex-shrink: 0;
+  height: 70rpx;
+  width: 70rpx;
+  background: #F5E069;
+  border-radius: 50%;
+}
+
+.home-btn-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around
+
+}
+.film-list-view {
+  width: 50%;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.me-view {
+  width: 50%;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}

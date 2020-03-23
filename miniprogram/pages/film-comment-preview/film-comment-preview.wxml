@@ -1,0 +1,60 @@
+<!--miniprogram/pages/file-details/film-details.wxml-->
+<view class="film-details-wrapper">
+
+  <view class="details-info-wrapper">
+    <view class="details-image-view">
+      <image class="details-image" src="{{filmDetails.imageurl}}"></image>
+    </view>
+    <view class="details-name">{{filmDetails.filmname}}</view>
+      <view class="user-info">
+        <view class="user-head">
+          <image class="user-head-image" src="{{reviewList.userInfo.profilePhoto}}"></image>
+        </view>
+        <view>
+          <text class="user-name">{{reviewList.userInfo.name}}</text>
+        </view>
+      </view>
+
+      <view class="review-info">
+        <!-- 文字类型的评论 -->
+        <view wx:if="{{reviewList.reviewContent.type == textType}}">
+            <text>{{reviewList.reviewContent.content}}</text>
+        </view>
+        <view wx:if="{{reviewList.reviewContent.type == voiceType}}">
+        <!-- 语音类型的评论 -->
+            <block wx:for="{{audioArr}}" wx:key="content" wx:for-item="v" wx:for-index="key">
+        <view class='output-audio'>
+  
+                <!-- 默认状态 未播放 -->
+                <view class='audio' wx:if="{{!v.bl}}" bindtap='audioPlay' data-key="{{key}}" data-id="{{v.id}}" data-bl="{{v.bl}}">
+                  <image class='ico' src='{{imagesUrl}}' />
+                  <label class='time'>{{recordingTimeqwe}}s</label>
+                </view>
+
+                <!-- 当前正在播放状态 -->
+                <view class='audio' wx:if="{{v.bl}}" bindtap='audioStop' data-key="{{key}}"  data-id="{{v.id}}" data-bl="{{v.bl}}">
+                  <image class='ico' src='{{imagesUrl}}' />
+                  <label class='time'>{{v.time}}</label>
+                </view>
+              </view>
+            </block>
+        </view>
+    </view>
+
+
+  </view>
+
+
+
+  <view class="review-btn-wrapper">
+    <view class="check-review" bindtap="reEditReview">
+      <button type="default" class="check-review-button" style="width:32vw">重新编辑</button>
+    </view>
+    <view class="add-review" bindtap="submitReview">
+      <button type="default" class="add-review-button" style="width:32vw">发布影评</button>
+    </view>
+  </view>
+
+
+
+</view>

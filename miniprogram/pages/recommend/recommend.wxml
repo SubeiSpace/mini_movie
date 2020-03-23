@@ -1,6 +1,0 @@
-<!--pages/recommend/recommend.wxml-->
-<view>
-
-  <movie-review id="{{soudUrl}}" button="{{button}}" movie_image="{{movie_image}}" movie_id="{{movie_id}}" movie_name="{{movie_name}}"
-  user="{{user}}"  soudUrl="{{soudUrl}}" review="{{input}}" recordingTime="{{recordingTime}}" isShow="{{isShow}}" isTheUser="{{isTheUser}}" reviewed="{{reviewed}}" bindFirstHandle="collectionHandle" bindSecondHandle="releaseHandle" bindThirdHandle="thirdHandle" bindAudioPlay="audioPlay"> </movie-review>
-</view>

@@ -1,28 +1,29 @@
-// components/login/login.js
-const util = require('../../utils/util.js')
-
+// components/login.js
 Component({
   /**
-   * Component properties
+   * 组件的属性列表
    */
   properties: {
 
   },
 
   /**
-   * Component initial data
+   * 组件的初始数据
    */
   data: {
 
   },
 
   /**
-   * Component methods
+   * 组件的方法列表
    */
   methods: {
-    onGotUserInfo : function(event){
-      const userInfo = event.detail.userInfo
-      this.triggerEvent("OnLogin", userInfo)
-    }
+    onTapLogin(event) {
+      const loginDetail = {
+        userInfo: event.detail.userInfo
+      } // detail object, Provided to the event listener function
+
+      this.triggerEvent('onLogin', loginDetail)
+    },
   }
 })

@@ -1,6 +1,0 @@
-<!--components/audio-button/audio-button.wxml-->
-
-<view class="audio" id="{{soundUrl}}" bindtap="audioPlay">
-  <image src="/images/video.png"></image>
-  <view>{{recordingTime}}s</view>
-</view>

@@ -22,8 +22,8 @@
 		}
 	},
 	"appid": "wx001f6f3d3f97a357",
-	"projectname": "mini-program-movie",
-	"libVersion": "2.8.1",
+	"projectname": "film_discuss_project",
+	"libVersion": "2.10.2",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"compileType": "miniprogram",
@@ -39,7 +39,35 @@
 		},
 		"plugin": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/film-list/film-list",
+					"pathName": "pages/film-list/film-list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/film-details/film-details",
+					"pathName": "pages/film-details/film-details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/film-details/film-details",
+					"pathName": "pages/film-details/film-details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/film-comment-list/film-comment-list",
+					"pathName": "pages/film-comment-list/film-comment-list",
+					"scene": null
+				}
+			]
 		},
 		"game": {
 			"list": []
@@ -59,47 +87,78 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/feedback/feedback",
-					"pathName": "pages/hot/hot",
+					"name": "pages/film-comment-list/film-comment-list",
+					"pathName": "pages/film-comment-list/film-comment-list",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/start/start",
-					"pathName": "pages/hot/hot",
+					"name": "pages/film-comment-details/film-comment-details",
+					"pathName": "pages/film-comment-details/film-comment-details",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/start/start",
-					"pathName": "pages/start/start",
+					"name": "pages/film-details/film-details",
+					"pathName": "pages/film-details/film-details",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/editorFB/editorFB",
-					"pathName": "pages/editorFB/editorFB",
+					"name": "pages/film-comment-edit/film-comment-edit",
+					"pathName": "pages/film-comment-edit/film-comment-edit",
+					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/start/start",
-					"pathName": "pages/start/start",
+					"name": "pages/film-comment-preview/film-comment-preview",
+					"pathName": "pages/film-comment-preview/film-comment-preview",
+					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/hot/hot",
-					"pathName": "pages/hot/hot",
+					"name": "pages/person-center/person-center",
+					"pathName": "pages/person-center/person-center",
+					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/start/start",
-					"pathName": "pages/start/start",
+					"name": "pages/film-list/film-list",
+					"pathName": "pages/film-list/film-list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/film-comment-list/film-comment-list",
+					"pathName": "pages/film-comment-list/film-comment-list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/fav-submitted-review/fav-submitted-review",
+					"pathName": "pages/fav-submitted-review/fav-submitted-review",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/film-comment-edit/film-comment-edit",
+					"pathName": "pages/film-comment-edit/film-comment-edit",
 					"scene": null
 				}
 			]

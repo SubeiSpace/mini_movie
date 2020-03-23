@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "movie-review":"../../components/movie_review/movie_review"
-  },
-  "navigationBarTitleText": "影评预览"
-}

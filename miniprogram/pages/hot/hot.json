@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "movie_item": "../../components/movie_item/movie_item"
-  },
-  "enablePullDownRefresh": true,
-  "navigationBarTitleText": "热门电影"
-  
-}
