@@ -1,14 +1,15 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/person-center/person-center",
-    "pages/film-list/film-list",
-    "pages/film-details/film-details",
-    "pages/film-comment-list/film-comment-list",
-    "pages/film-comment-details/film-comment-details",
-    "pages/film-comment-edit/film-comment-edit",
-    "pages/film-comment-preview/film-comment-preview",
-    "pages/fav-submitted-review/fav-submitted-review",
+    "pages/film/film-list/film-list",
+    "pages/film/film-details/film-details",
+    "pages/film/film-comment/film-comment",
+    "pages/film/film-comment-edit/film-comment-edit",
+    "pages/film/film-comment-preview/film-comment-preview",
+    "pages/my/my-comment/my-comment",
+    "pages/my/my-info/my-info",
+    "pages/my/my-fav-pub-comment/my-fav-pub-comment",
+    "pages/film/film-comment-details/film-comment-details",
     "components/login/login"
   ],
   "window": {

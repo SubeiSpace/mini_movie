@@ -1,0 +1,16 @@
+<scroll-view scroll-y scroll-with-animation enable-back-to-top style="height: 100%">
+    <view class="film-list-wrapper" wx:for="{{filmList}}" data-filmId="{{item._id}}"bindtap="openDetails" >
+        <view class="image-wrapper">
+          <image  src="{{item.imageurl}}" class="film-image"></image>
+        </view>
+        
+        <view class="film-info-wrapper">
+          <view class="film-name-view">
+            <text class="film-name">{{item.filmname}}</text>
+          </view>
+          <view class="film-type-view">
+            <text class="film-type">{{item.filmtype}}</text>
+          </view>
+        </view>
+    </view>
+</scroll-view>

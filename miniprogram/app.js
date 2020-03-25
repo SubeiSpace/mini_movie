@@ -19,7 +19,7 @@ App({
   globalData:{
     textType: 1,
     voiceType: 2,
-    voiceContextPath : "https://7778-wx-server-sdk-001-1301395110.tcb.qcloud.la/sounds",
+    voiceContextPath: "https://6c75-lucky-08bed5-1258332634.tcb.qcloud.la/sounds/",
     userInfo: null,
   }
 

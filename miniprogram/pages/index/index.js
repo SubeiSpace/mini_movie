@@ -1,5 +1,5 @@
-const util = require('../../utils/util')
-const db = require('../../utils/db')
+const util = require('../../utils/webhelper')
+const db = require('../../utils/cloud-functions')
 const app = getApp()
 
 Page({
@@ -31,7 +31,6 @@ Page({
     db.getRandomReview(filmid).then(result => {
       wx.hideLoading()
       const reviewData = result.data[0]
-      
       if (reviewData) {
         console.log(reviewData);
         this.setData({
@@ -41,36 +40,30 @@ Page({
       }
     })
   },
-
-  redirectToFilmList:function(){
-    wx.redirectTo({
-      url: '../film-list/film-list',
-    })
-  },
-  redirectToMe:function(){
-    wx.redirectTo({
-      url: '../person-center/person-center',
-    })
-  },
-  redirectToFilmDetails:function(){
+ // 跳转到详情页面
+  openFilmDetails:function(){
     wx.navigateTo({
-      url: '../film-details/film-details?id=' + this.data.filmDetails._id,
+      url: '../film/film-details/film-details?id=' + this.data.filmDetails._id,
     })
   },
-  redirectToReviewDetails: function () {
-    console.log(this.data.review._id != undefined)
+  openCommentDetails: function () {
+    console.log("开始打开评论详情")
     if (this.data.review._id != undefined){
       wx.navigateTo({
-        url: '../film-comment-details/film-comment-details?id=' + this.data.review._id,
+        url: '../film/film-comment-details/film-comment-details?id=' + this.data.review._id,
       })
     }
     
   },
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh: function () {
-
-  }
+  redirectToFilmList: function () {
+    wx.redirectTo({
+      url: '../film/film-list/film-list',
+    })
+  },
+  redirectToMe: function () {
+    wx.redirectTo({
+      url: '../my/my-info/my-info',
+    })
+  },
 
 })

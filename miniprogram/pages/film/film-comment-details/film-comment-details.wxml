@@ -1,0 +1,75 @@
+<view class="film-details-wrapper">
+
+  <view class="details-info-wrapper">
+    <view class="details-image-view">
+      <image class="details-image" src="{{filmDetails.imageurl}}"></image>
+    </view>
+    <view class="details-name">{{filmDetails.filmname}}</view>
+      <view class="user-info">
+        <view class="user-head">
+          <image class="user-head-image" src="{{reviewDetails.avatar}}"></image>
+        </view>
+        <view>
+          <text class="user-name">{{reviewDetails.username}}</text>
+        </view>
+      </view>
+
+      <view class="review-info">
+        <!-- 文字类型的评论 -->
+        <view wx:if="{{reviewDetails.type == textType}}">
+            <text>{{reviewDetails.content}}</text>
+        </view>
+        <view wx:if="{{reviewDetails.type == voiceType}}">
+        <!-- 语音类型的评论 -->
+            <block wx:for="{{audioArr}}" wx:for-item="v" wx:for-index="key">
+        <view class='output-audio'>
+  
+                <!-- 默认状态 未播放 -->
+                <view class='audio' wx:if="{{!v.bl}}" bindtap='audioPlay' data-key="{{key}}" data-id="{{v.id}}" data-bl="{{v.bl}}">
+                  <image class='ico' src='{{imagesUrl}}' />
+                  <label class='time'>{{reviewDetails.time}}s</label>
+                </view>
+
+                <!-- 当前正在播放状态 -->
+                <view class='audio' wx:if="{{v.bl}}" bindtap='audioStop' data-key="{{key}}"  data-id="{{v.id}}" data-bl="{{v.bl}}">
+                  <image class='ico' src='{{imagesUrl}}' />
+                  <label class='time'>{{reviewDetails.time}}s</label>
+                </view>
+              </view>
+            </block>
+        </view>
+    </view>
+
+
+  </view>
+
+
+
+  <view class="review-btn-wrapper" hidden="{{hiddenAll}}">
+    <view class="check-review" bindtap="saveFavComment">
+      <button type="default" class="check-review-button" style="width:32vw">收藏影评</button>
+    </view>
+    <view class="add-review" bindtap="addComment">
+      <button type="default" class="add-review-button" style="width:32vw">写影评</button>
+    </view>
+  </view>
+
+  <view class="fav-btn-wrapper" hidden="{{hiddenFavOnly}}">
+    <view class="fav-review" bindtap="saveFavComment">
+      <button type="default" class="fav-button" style="width:32vw">收藏影评</button>
+    </view>
+  </view>
+  
+
+<view>
+  <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+    <block wx:for-items="{{actionSheetItems}}">
+      <action-sheet-item bindtap="bind{{item.bindtap}}">{{item.text}}</action-sheet-item>
+    </block>
+    <action-sheet-cancel bindtap="actionSheetTap">取消</action-sheet-cancel>
+  </action-sheet>
+</view>
+
+
+
+</view>

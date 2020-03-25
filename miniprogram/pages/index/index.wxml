@@ -1,12 +1,12 @@
 <!-- 小程序默认首页-->
 <view class="film-summary-wrapper">
-  <view class="film-poster-wrapper" bindtap="redirectToFilmDetails">
+  <view class="film-poster-wrapper" bindtap="openFilmDetails">
     <image class="film-poster" src="{{filmDetails.imageurl}}" mode="widthFix"></image>
   </view>
   <text class="film-name">{{filmDetails.filmname}}</text>
 </view>
 
-<view class="film-review-wrapper" bindtap="redirectToReviewDetails">
+<view class="film-review-wrapper" bindtap="openCommentDetails">
     <view class="user-info">
       <image class="user-head" src="{{review.avatar}}"></image>
     </view>
